@@ -1,4 +1,4 @@
-function double_int_fast(inputM, discard)
+function RMPC_DoubleIntegrator(inputM, discard)
 %% 
     
     addpath(genpath('/home/roccosalvia/Documents/MATLAB/YALMIP-master'))

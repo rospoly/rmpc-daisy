@@ -1,4 +1,4 @@
-function RMPC3(delta,eps)
+function RMPC_Pendulum(delta,eps)
     %clc
     %clear all
     close all

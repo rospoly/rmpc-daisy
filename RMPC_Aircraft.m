@@ -1,4 +1,4 @@
-function RMPC4(delta,epss)
+function RMPC_Aircraft(delta,epss)
     clc
     %clear all
     close all
