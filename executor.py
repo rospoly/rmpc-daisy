@@ -16,32 +16,37 @@ from parser_output_from_MATLAB import *
 #### INPUT PARAMETERS ##################################################
 ########################################################################
 
-if len(sys.argv)<5:
+if len(sys.argv)<3:
+	print "Wrong number of arguments.\n"
 	print "Arg-1 MATLAB name of the script\n"
 	print "Arg-2 First Parameter ('delta' for Aircraft and Pendolum, 'horizon' for double integrator)\n"
 	print "Arg-3 Second Parameter ('eps' for Aircraft and Pendolum, N/A for double integrator)\n"
-	print "Arg-4 filename for temporary files\n"
-	print "Arg-5 (Optional) max iterations. Default = +infinite (until convergence)\n"
-	exit("Please provide input parameters. Ex. python executor.py RMPC_Pendulum 0.1 0.001 pendulum")
+	exit("Please provide input parameters. \n\nEx. python executor.py RMPC_Pendulum 0.1 0.001\n\nEx. python executor.py RMPC_DoubleIntegrator 5")
 
-matlabNamefile=str(sys.argv[1]) #matlab script name
-matlabDelta=str(sys.argv[2]) #max disturbance input to Matlab
-epsilon=str(sys.argv[3]) #size of the tubes
-filename=str(sys.argv[4]) #temp name
+try:
+	matlabNamefile=str(sys.argv[1]) #matlab script name
+	matlabDelta=str(sys.argv[2]) #max disturbance input to Matlab
 
-if len(sys.argv)==5:
+	if "RMPC_DoubleIntegrator" in matlabNamefile:
+		epsilon="N/A"
+	else:
+		epsilon=str(sys.argv[3]) #size of the tubes
+
+	filename="TMP_"+matlabNamefile
+
 	print "\n\nMax iterations = +infinite (until convergence)\n\n"
-
-if len(sys.argv)>5:
-	maxIterations=int(sys.argv[5])
-	print "\n\nMax iterations = "+str(maxIterations)
-else:
 	maxIterations=1000
-	
-outputFile="outputMatlab.txt"
-epsilonSAFE="0.001"
-spaceForFPError="N/A"
-iteration=0
+	outputFile="outputMatlab.txt"
+	epsilonSAFE="0.001"
+	spaceForFPError="N/A"
+	iteration=0
+except:
+	print "Error while parsing input arguments.\n\n"
+	print "Arg-1 MATLAB name of the script\n"
+	print "Arg-2 First Parameter ('delta' for Aircraft and Pendolum, 'horizon' for double integrator)\n"
+	print "Arg-3 Second Parameter ('eps' for Aircraft and Pendolum, N/A for double integrator)\n"
+	exit("Please provide input parameters. \nEx. python executor.py RMPC_Pendulum 0.1 0.001\nEx. python executor.py RMPC_DoubleIntegrator 5")
+
 ########################################################################
 ########################################################################
 
@@ -51,8 +56,11 @@ start = time.time()
 
 while True:
 	
-	print "Robustness coefficient (delta) given to MATLAB: " + matlabDelta + "\n\n"
-	print "Size of the tubes (epsilon): " + epsilon + "\n\n"	
+	if "RMPC_DoubleIntegrator" in matlabNamefile:
+		print "Horizon: "+str(matlabDelta)
+	else:
+		print "Robustness coefficient (delta) given to MATLAB: " + matlabDelta + "\n\n"
+		print "Size of the tubes (epsilon): " + epsilon + "\n\n"	
 
 	if os.path.exists("./output/"):
 		shutil.rmtree("./output/", ignore_errors=True)
@@ -60,9 +68,7 @@ while True:
 	if os.path.exists("./inputFiles/"):
 		shutil.rmtree("./inputFiles/", ignore_errors=True)
 	os.mkdir('./inputFiles/')
-	
-	#+ str(matlabDelta) + ", " + str(epsilon) + 
-	
+		
 	try:
 		exe="matlab -nodisplay -nosplash -nodesktop -r \""+matlabNamefile+"("+str(matlabDelta)+","+str(epsilon)+"); quit\" > " + str(outputFile)
 		exe=shlex.split(exe)
@@ -72,6 +78,7 @@ while True:
 		print "Error while calling matlab"
 		exit(0)
 	
+	#this is for the scalability experiment
 	if "RMPC_DoubleIntegrator" in matlabNamefile:
 		matlabDelta="0.1"
 		epsilon="0.001"
@@ -100,7 +107,7 @@ while True:
 			break
 		else:
 			print "UNABLE to satisfy the matlab bound (even with with Float64 precision). Asking MATLAB for new controller."
-			matlabDelta=str(Decimal(Decimal(matlabDelta) + Decimal(maxErrorFailure)))
+			matlabDelta=str(Decimal(Decimal(matlabDelta) + max(Decimal(maxErrorFailureB),Decimal(maxErrorFailureC))))
 	else:
 		print "UNABLE to satisfy the matlab bound because of max|Ui-Uj| = " + str(maxUiUj) + " > " + matlabDelta + ". Asking MATLAB for new controller."
 		matlabDelta=str(Decimal(maxUiUj)+Decimal(epsilonSAFE))
