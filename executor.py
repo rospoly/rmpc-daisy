@@ -57,7 +57,7 @@ start = time.time()
 while True:
 	
 	if "RMPC_DoubleIntegrator" in matlabNamefile:
-		print "Horizon: "+str(matlabDelta)
+		print "Horizon: "+str(matlabDelta)+"\n\n"
 	else:
 		print "Robustness coefficient (delta) given to MATLAB: " + matlabDelta + "\n\n"
 		print "Size of the tubes (epsilon): " + epsilon + "\n\n"	
