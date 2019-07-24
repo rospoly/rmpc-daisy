@@ -28,7 +28,7 @@ try:
 	matlabDelta=str(sys.argv[2]) #max disturbance input to Matlab
 
 	if "RMPC_DoubleIntegrator" in matlabNamefile:
-		epsilon="N/A"
+		epsilon="12345"
 	else:
 		epsilon=str(sys.argv[3]) #size of the tubes
 
