@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-* Python (tested with Python 2.7.12):
+* Python (tested with Python 2.7.12 on Debian GNU/Linux 9.9):
 
 	* Python libraries `numpy` and `cdd`: `pip install numpy cdd`
 
