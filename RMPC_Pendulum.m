@@ -3,9 +3,9 @@ function RMPC_Pendulum(delta,eps)
     %clear all
     close all
     format long
-    addpath(genpath('/home/roccosalvia/Documents/MATLAB/YALMIP-master'))
-    addpath(genpath('/home/roccosalvia/Documents/MATLAB/MATLAB_files'))
-    addpath(genpath('/home/roccosalvia/Documents/MATLAB/MPT/tbxmanager'))
+    addpath(genpath('/<put-your-path-here>/YALMIP-master'))
+    addpath(genpath('/<put-your-path-here>/rmpc-daisy/matlab_lib'))
+    addpath(genpath('/<put-your-path-here>/tbxmanager'))
     %%
     %Inverted Pendulum example
     g = 9.81;

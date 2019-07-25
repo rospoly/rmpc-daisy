@@ -1,9 +1,9 @@
 function RMPC_DoubleIntegrator(inputM, discard)
 %% 
     
-    addpath(genpath('/home/roccosalvia/Documents/MATLAB/YALMIP-master'))
-    addpath(genpath('/home/roccosalvia/Documents/MATLAB/MATLAB_files'))
-    addpath(genpath('/home/roccosalvia/Documents/MATLAB/MPT/tbxmanager'))
+    addpath(genpath('/<put-your-path-here>/YALMIP-master'))
+    addpath(genpath('/<put-your-path-here>/rmpc-daisy/matlab_lib'))
+    addpath(genpath('/<put-your-path-here>/tbxmanager'))
     m = inputM;%Change this to change number of partitions!!!
     %fake inputs
     delta=.1;
