@@ -14,7 +14,7 @@
 	
 	* Install tbxmanager (toolbox) [instructions](https://www.mpt3.org/Main/Installation).
 	
-* Replace the string '<put-your-path-here>' in files RMPC_Aircraft.m, RMPC_DoubleIntegrator.m and RMPC_Pendulum.m:
+* Replace the string `<put-your-path-here>` in files RMPC_Aircraft.m, RMPC_DoubleIntegrator.m and RMPC_Pendulum.m:
 	
 	* Replace `addpath(genpath('/<put-your-path-here>/YALMIP-master'))` with your local path to `YALMIP` directory.
 	
