@@ -10,11 +10,11 @@
 
 * Matlab (tested with  Matlab R2016b 9.1.0.441655 64bit):
 	
-	* YALMIP-master (clone [repo](https://github.com/yalmip/YALMIP)).
+	* Clone YALMIP-master ([repo](https://github.com/yalmip/YALMIP)).
 	
-	* tbxmanager (toolbox) [install](https://www.mpt3.org/Main/Installation).
+	* Install tbxmanager (toolbox) [instructions](https://www.mpt3.org/Main/Installation).
 	
-	* configure addpath in matlab scripts
+* 
 
 ## Installing
 
