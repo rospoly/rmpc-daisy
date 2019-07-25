@@ -12,7 +12,7 @@
 	
 	* Clone YALMIP-master ([repo](https://github.com/yalmip/YALMIP)).
 	
-	* Install tbxmanager ([instructions](https://www.mpt3.org/Main/Installation)).
+	* Install Multi-Parametric Toolbox 3 ([tbxmanager](https://www.mpt3.org/Main/Installation)).
 	
 * Replace the string `<put-your-path-here>` in files `RMPC_Aircraft.m`, `RMPC_DoubleIntegrator.m` and `RMPC_Pendulum.m`:
 	
