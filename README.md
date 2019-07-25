@@ -6,7 +6,7 @@
 
 	* Python libraries `numpy` and `cdd`: `pip install numpy cdd`
 
-* [simple build tool (sbt)](http://www.scala-sbt.org/).
+* Install [simple build tool (sbt)](http://www.scala-sbt.org/).
 
 * Matlab (tested with  Matlab R2016b 9.1.0.441655 64bit):
 	
