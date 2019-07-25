@@ -8,11 +8,11 @@
 
 * Install [simple build tool (sbt)](http://www.scala-sbt.org/).
 
-* Matlab (tested with  Matlab R2016b 9.1.0.441655 64bit):
+* Install Matlab (tested with  Matlab R2016b 9.1.0.441655 64bit) and the following libraries:
 	
 	* Clone YALMIP-master ([repo](https://github.com/yalmip/YALMIP)).
 	
-	* Install tbxmanager (toolbox) [instructions](https://www.mpt3.org/Main/Installation).
+	* Install tbxmanager ([instructions](https://www.mpt3.org/Main/Installation)).
 	
 * Replace the string `<put-your-path-here>` in files RMPC_Aircraft.m, RMPC_DoubleIntegrator.m and RMPC_Pendulum.m:
 	
