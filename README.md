@@ -2,17 +2,17 @@
 
 ## Prerequisites
 
-* Python: tested with Python 2.7.12;
+* Python (tested with Python 2.7.12):
 
 	* Python libraries `numpy` and `cdd`: `pip install numpy cdd`
 
 * [simple build tool (sbt)](http://www.scala-sbt.org/).
 
-* Matlab: tested with  Matlab R2016b
+* Matlab (tested with  Matlab R2016b 9.1.0.441655 64bit):
 	
-	* YALMIP-master repository
+	* YALMIP-master (clone [repo](https://github.com/yalmip/YALMIP)).
 	
-	* tbxmanager (toolbox)
+	* tbxmanager (toolbox) [install](https://www.mpt3.org/Main/Installation).
 	
 	* configure addpath in matlab scripts
 
