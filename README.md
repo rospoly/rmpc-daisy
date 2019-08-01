@@ -1,4 +1,8 @@
-# rmpc - Daisy
+# rmpc - Daisy: an algorithm for space-efficient implementations of explicit MPC for robust control of LTI systems
+
+## Publications
+
+* Memory-Efficient Mixed-Precision Implementations for Robust Explicit Model Predictive Control, M. Salamati, R. Salvia, E. Darulova, S. Soudjani and R. Majumdar. (EMSOFT 2019)
 
 ## Prerequisites
 
