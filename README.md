@@ -26,7 +26,7 @@
 	
 	* Replace `addpath(genpath('/<put-your-path-here>/tbxmanager'))` with your local path to `tbxmanager` directory.
 
-## Installing
+## Setup
 
 Type in rmpc-daisy's home directory:
 
