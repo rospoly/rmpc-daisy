@@ -4,7 +4,7 @@
 
 * Memory-Efficient Mixed-Precision Implementations for Robust Explicit Model Predictive Control, M. Salamati, R. Salvia, E. Darulova, S. Soudjani and R. Majumdar. (EMSOFT 2019)
 
-## Prerequisites
+## Requirements
 
 * Python (tested with Python 2.7.12 on Debian GNU/Linux 9.9):
 
